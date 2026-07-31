@@ -51,6 +51,24 @@
         </form>
       </section>
 
+      <section class="panel">
+        <h2 data-i18n="xray.result.title">ใส่ผล X-ray</h2>
+        <form id="xrayResultForm">
+          <input id="xrayResultValue" placeholder="ผลภาพ" data-i18n-placeholder="xray.result.value">
+          <select id="xrayResultStatus">
+            <option value="Completed">Completed</option>
+            <option value="Pending">Pending</option>
+          </select>
+          <button type="submit" data-i18n="xray.result.save">บันทึกผล</button>
+          <p class="message"></p>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2 data-i18n="xray.result.list">ผล X-ray ล่าสุด</h2>
+        <div id="xrayResultsList"></div>
+      </section>
+
       <section class="panel" id="aiPanel"></section>
     </main>
   </div>

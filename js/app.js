@@ -61,11 +61,19 @@ const TRANSLATIONS = {
     'lab.order': 'ສົ່ງຄໍາສັ່ງທົດສອບ',
     'lab.form.test': 'ປະເພດການທົດສອບ',
     'lab.submit': 'ສົ່ງຄໍາສັ່ງ',
+    'lab.result.title': 'ໃສ່ຜົນ Lab',
+    'lab.result.value': 'ຜົນການທົດສອບ',
+    'lab.result.save': 'ບັນທຶກຜົນ',
+    'lab.result.list': 'ຜົນ Lab ຫຼ້າສຸດ',
     'xray.title': 'X-ray',
     'xray.subtitle': 'ຄໍາສັ່ງການສະແດງຮູບ',
     'xray.order': 'ສົ່ງຄໍາສັ່ງ X-ray',
     'xray.form.test': 'ປະເພດການທົດສອບ',
     'xray.submit': 'ສົ່ງຄໍາສັ່ງ',
+    'xray.result.title': 'ໃສ່ຜົນ X-ray',
+    'xray.result.value': 'ຜົນຮູບ',
+    'xray.result.save': 'ບັນທຶກຜົນ',
+    'xray.result.list': 'ຜົນ X-ray ຫຼ້າສຸດ',
     'billing.title': 'ການຈ່າຍເງິນ',
     'billing.subtitle': 'ຂໍ້ມູນຄ່າໃຊ້ຈ່າຍ',
     'billing.create': 'ສ້າງໃບບິນ',
@@ -138,11 +146,19 @@ const TRANSLATIONS = {
     'lab.order': 'ส่งคำสั่ง Lab',
     'lab.form.test': 'ประเภทการตรวจ',
     'lab.submit': 'ส่งคำสั่ง',
+    'lab.result.title': 'ใส่ผล Lab',
+    'lab.result.value': 'ผลตรวจ',
+    'lab.result.save': 'บันทึกผล',
+    'lab.result.list': 'ผล Lab ล่าสุด',
     'xray.title': 'เอ็กซเรย์',
     'xray.subtitle': 'คำสั่งตรวจภาพรังสี',
     'xray.order': 'ส่งคำสั่ง X-ray',
     'xray.form.test': 'ประเภทการตรวจ',
     'xray.submit': 'ส่งคำสั่ง',
+    'xray.result.title': 'ใส่ผล X-ray',
+    'xray.result.value': 'ผลภาพ',
+    'xray.result.save': 'บันทึกผล',
+    'xray.result.list': 'ผล X-ray ล่าสุด',
     'billing.title': 'การเงิน',
     'billing.subtitle': 'ข้อมูลค่าใช้จ่ายและการเรียกเก็บ',
     'billing.create': 'สร้างบิล',
@@ -215,11 +231,19 @@ const TRANSLATIONS = {
     'lab.order': 'Send Lab Order',
     'lab.form.test': 'Test type',
     'lab.submit': 'Send Order',
+    'lab.result.title': 'Enter Lab Result',
+    'lab.result.value': 'Test result',
+    'lab.result.save': 'Save result',
+    'lab.result.list': 'Latest Lab Results',
     'xray.title': 'X-ray',
     'xray.subtitle': 'Imaging orders',
     'xray.order': 'Send X-ray Order',
     'xray.form.test': 'Test type',
     'xray.submit': 'Send Order',
+    'xray.result.title': 'Enter X-ray Result',
+    'xray.result.value': 'Image result',
+    'xray.result.save': 'Save result',
+    'xray.result.list': 'Latest X-ray Results',
     'billing.title': 'Billing',
     'billing.subtitle': 'Charges and invoicing',
     'billing.create': 'Create Invoice',
@@ -506,6 +530,27 @@ function bindDepartmentForms() {
     });
   }
 
+  const labResultForm = document.getElementById('labResultForm');
+  if (labResultForm) {
+    labResultForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const state = getState();
+      const patient = getActivePatient(state);
+      const result = document.getElementById('labResultValue').value.trim();
+      const status = document.getElementById('labResultStatus').value || 'Completed';
+      if (!patient || !result) return;
+      const order = [...state.labOrders].filter((item) => item.patientId === patient.id).sort((a, b) => b.id - a.id)[0];
+      if (order) {
+        order.result = result;
+        order.status = status;
+      } else {
+        state.labOrders.unshift({ id: Date.now(), patientId: patient.id, test: 'Lab Result', status, result });
+      }
+      saveState(state);
+      showDepartmentMessage(labResultForm, 'บันทึกผล Lab แล้ว');
+    });
+  }
+
   const xrayForm = document.getElementById('xrayForm');
   if (xrayForm) {
     xrayForm.addEventListener('submit', (event) => {
@@ -517,6 +562,27 @@ function bindDepartmentForms() {
       state.xrayOrders.unshift({ id: Date.now(), patientId: patient.id, test, status: 'Pending', result: '-' });
       saveState(state);
       showDepartmentMessage(xrayForm, 'ส่งคำสั่ง X-ray แล้ว');
+    });
+  }
+
+  const xrayResultForm = document.getElementById('xrayResultForm');
+  if (xrayResultForm) {
+    xrayResultForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const state = getState();
+      const patient = getActivePatient(state);
+      const result = document.getElementById('xrayResultValue').value.trim();
+      const status = document.getElementById('xrayResultStatus').value || 'Completed';
+      if (!patient || !result) return;
+      const order = [...state.xrayOrders].filter((item) => item.patientId === patient.id).sort((a, b) => b.id - a.id)[0];
+      if (order) {
+        order.result = result;
+        order.status = status;
+      } else {
+        state.xrayOrders.unshift({ id: Date.now(), patientId: patient.id, test: 'X-ray Result', status, result });
+      }
+      saveState(state);
+      showDepartmentMessage(xrayResultForm, 'บันทึกผล X-ray แล้ว');
     });
   }
 
@@ -572,8 +638,14 @@ function renderApp() {
   if (page === 'opd') renderDepartmentPage(state, 'OPD', 'OPD Triage', patients);
   if (page === 'ipd') renderDepartmentPage(state, 'IPD', 'IPD Admission', patients);
   if (page === 'pharmacy') renderDepartmentPage(state, 'Pharmacy', 'Pharmacy', patients);
-  if (page === 'lab') renderDepartmentPage(state, 'Lab', 'Lab', patients);
-  if (page === 'xray') renderDepartmentPage(state, 'X-ray', 'X-ray', patients);
+  if (page === 'lab') {
+    renderDepartmentPage(state, 'Lab', 'Lab', patients);
+    renderDiagnosticResults(state, 'lab');
+  }
+  if (page === 'xray') {
+    renderDepartmentPage(state, 'X-ray', 'X-ray', patients);
+    renderDiagnosticResults(state, 'xray');
+  }
   if (page === 'billing') renderDepartmentPage(state, 'Billing', 'Billing', patients);
 }
 
@@ -635,6 +707,24 @@ function renderDepartmentPage(state, departmentName, title, patients) {
   if (heading) heading.textContent = title;
   const summary = document.querySelector('.topbar p');
   if (summary) summary.textContent = `${departmentName} workflow shared across all departments`;
+}
+
+function renderDiagnosticResults(state, type) {
+  const container = document.getElementById(type === 'lab' ? 'labResultsList' : 'xrayResultsList');
+  if (!container) return;
+  const orders = (state[`${type}Orders`] || []).slice(0, 8);
+  container.innerHTML = orders.length
+    ? orders.map((item) => {
+        const patient = state.patients.find((entry) => entry.id === item.patientId);
+        return `
+          <div class="status-item">
+            <strong>${patient ? patient.name : 'Unknown'}</strong>
+            <div>${item.test}</div>
+            <div>Status: ${item.status}</div>
+            <div>Result: ${item.result || '-'}</div>
+          </div>`;
+      }).join('')
+    : '<p class="muted">ยังไม่มีผลตรวจ</p>';
 }
 
 function renderPatientSelector(patients) {

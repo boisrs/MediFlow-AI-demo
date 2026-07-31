@@ -51,6 +51,24 @@
         </form>
       </section>
 
+      <section class="panel">
+        <h2 data-i18n="lab.result.title">ใส่ผล Lab</h2>
+        <form id="labResultForm">
+          <input id="labResultValue" placeholder="ผลตรวจ" data-i18n-placeholder="lab.result.value">
+          <select id="labResultStatus">
+            <option value="Completed">Completed</option>
+            <option value="Pending">Pending</option>
+          </select>
+          <button type="submit" data-i18n="lab.result.save">บันทึกผล</button>
+          <p class="message"></p>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2 data-i18n="lab.result.list">ผล Lab ล่าสุด</h2>
+        <div id="labResultsList"></div>
+      </section>
+
       <section class="panel" id="aiPanel"></section>
     </main>
   </div>
