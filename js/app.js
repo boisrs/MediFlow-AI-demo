@@ -14,6 +14,37 @@ const TRANSLATIONS = {
     'nav.logout': 'ອອກຈາກລະບົບ',
     'common.language': 'ພາສາ',
     'common.language_switcher': 'ປ່ຽນພາສາ',
+    'common.select_patient': 'ເລືອກຜູ້ເປັນໄຂ້',
+    'common.no_patient_data': 'ຍັງບໍ່ມີຂໍ້ມູນຜູ້ເປັນໄຂ້',
+    'common.no_results': 'ຍັງບໍ່ມີຜົນການທົດສອບ',
+    'status.stable': 'ສະຖານະດີ',
+    'status.critical': 'ສະຖານະຮຸນແຮງ',
+    'status.discharged': 'ອອກເຮັດ',
+    'status.pending': 'ຍັງລໍຖ້າ',
+    'status.completed': 'ສຳເລັດ',
+    'billing.type.consultation': 'ການປຶກສາ',
+    'billing.type.admission': 'ຮັບຄົນເຈັບ',
+    'billing.type.lab': 'Lab',
+    'billing.type.imaging': 'X-ray',
+    'dashboard.cards.today_patients': 'ຈຳນວນຜູ້ເປັນໄຂ້ໃນມື້ນີ້',
+    'dashboard.cards.available_beds': 'ຕຽງວ່າງ',
+    'dashboard.cards.low_stock': 'ຢາໃກ້ໝົດ',
+    'dashboard.cards.avg_wait': 'ໄລຍະເວລາລໍຖ້າ້ສະເລ່ຍ',
+    'dashboard.ai_assistant': 'ຜູ້ຊ່ວຍອັດສະລິຍະ',
+    'dashboard.ai.summary': 'ສະຫຼຸບປະຫວັດ:',
+    'dashboard.ai.probable': 'ພະຍາດທີ່ເປັນໄປໄດ້:',
+    'dashboard.ai.alert': 'ການແຈ້ງເຕືອນ:',
+    'dashboard.ai.interaction': 'ການໂຕ້ຕອບຢາ:',
+    'dashboard.ai.guidance': 'ຄຳແນະນຳ:',
+    'messages.patient_saved': 'ບັນທຶກຜູ້ເປັນໄຂ້ສຳເລັດແລ້ວ',
+    'messages.opd_saved': 'ບັນທຶກ OPD ແລ້ວ',
+    'messages.ipd_saved': 'ອັບເດດ IPD ແລ້ວ',
+    'messages.pharmacy_saved': 'ສັ່ງຢາສຳເລັດແລ້ວ',
+    'messages.lab_saved': 'ສົ່ງຄໍາສັ່ງ Lab ແລ້ວ',
+    'messages.lab_result_saved': 'ບັນທຶກຜົນ Lab ແລ້ວ',
+    'messages.xray_saved': 'ສົ່ງຄໍາສັ່ງ X-ray ແລ້ວ',
+    'messages.xray_result_saved': 'ບັນທຶກຜົນ X-ray ແລ້ວ',
+    'messages.billing_saved': 'ສ້າງບິນສຳເລັດແລ້ວ',
     'patients.title': 'ລົງທະບຽນຜູ້ເປັນໄຂ້',
     'patients.subtitle': 'ລະບົບລົງທະບຽນຜູ້ເປັນໄຂ້ສໍາລັບທຸກພາກສ່ວນ',
     'patients.add_new': 'ເພີ່ມຜູ້ເປັນໄຂ້ໃຫມ່',
@@ -99,6 +130,37 @@ const TRANSLATIONS = {
     'nav.logout': 'ออกจากระบบ',
     'common.language': 'ภาษา',
     'common.language_switcher': 'เปลี่ยนภาษา',
+    'common.select_patient': 'เลือกผู้ป่วย',
+    'common.no_patient_data': 'ยังไม่มีข้อมูลผู้ป่วย',
+    'common.no_results': 'ยังไม่มีผลตรวจ',
+    'status.stable': 'เสถียร',
+    'status.critical': 'วิกฤต',
+    'status.discharged': 'จำหน่าย',
+    'status.pending': 'รอดำเนินการ',
+    'status.completed': 'เสร็จสิ้น',
+    'billing.type.consultation': 'ปรึกษา',
+    'billing.type.admission': ' admit ',
+    'billing.type.lab': 'Lab',
+    'billing.type.imaging': 'X-ray',
+    'dashboard.cards.today_patients': 'จำนวนผู้ป่วยวันนี้',
+    'dashboard.cards.available_beds': 'เตียงว่าง',
+    'dashboard.cards.low_stock': 'ยาใกล้หมด',
+    'dashboard.cards.avg_wait': 'เวลารอเฉลี่ย',
+    'dashboard.ai_assistant': 'ผู้ช่วยแอป',
+    'dashboard.ai.summary': 'สรุปประวัติ:',
+    'dashboard.ai.probable': 'โรคที่เป็นไปได้:',
+    'dashboard.ai.alert': 'Clinical Alert:',
+    'dashboard.ai.interaction': 'Drug Interaction:',
+    'dashboard.ai.guidance': 'แนวทางรักษา:',
+    'messages.patient_saved': 'บันทึกผู้ป่วยเรียบร้อยแล้ว',
+    'messages.opd_saved': 'บันทึกข้อมูล OPD แล้ว',
+    'messages.ipd_saved': 'อัปเดตข้อมูล IPD แล้ว',
+    'messages.pharmacy_saved': 'สั่งยาเรียบร้อยแล้ว',
+    'messages.lab_saved': 'ส่งคำสั่ง Lab แล้ว',
+    'messages.lab_result_saved': 'บันทึกผล Lab แล้ว',
+    'messages.xray_saved': 'ส่งคำสั่ง X-ray แล้ว',
+    'messages.xray_result_saved': 'บันทึกผล X-ray แล้ว',
+    'messages.billing_saved': 'สร้างบิลเรียบร้อยแล้ว',
     'patients.title': 'ทะเบียนผู้ป่วย',
     'patients.subtitle': 'ทะเบียนผู้ป่วยกลางสำหรับทุกแผนก',
     'patients.add_new': 'เพิ่มผู้ป่วยใหม่',
@@ -184,6 +246,37 @@ const TRANSLATIONS = {
     'nav.logout': 'Logout',
     'common.language': 'Language',
     'common.language_switcher': 'Switch language',
+    'common.select_patient': 'Select patient',
+    'common.no_patient_data': 'No patient data yet',
+    'common.no_results': 'No results yet',
+    'status.stable': 'Stable',
+    'status.critical': 'Critical',
+    'status.discharged': 'Discharged',
+    'status.pending': 'Pending',
+    'status.completed': 'Completed',
+    'billing.type.consultation': 'Consultation',
+    'billing.type.admission': 'Admission',
+    'billing.type.lab': 'Lab',
+    'billing.type.imaging': 'Imaging',
+    'dashboard.cards.today_patients': 'Patients today',
+    'dashboard.cards.available_beds': 'Available beds',
+    'dashboard.cards.low_stock': 'Low stock',
+    'dashboard.cards.avg_wait': 'Average wait',
+    'dashboard.ai_assistant': 'AI Assistant',
+    'dashboard.ai.summary': 'Summary history:',
+    'dashboard.ai.probable': 'Probable condition:',
+    'dashboard.ai.alert': 'Clinical Alert:',
+    'dashboard.ai.interaction': 'Drug Interaction:',
+    'dashboard.ai.guidance': 'Treatment guidance:',
+    'messages.patient_saved': 'Patient saved successfully',
+    'messages.opd_saved': 'OPD record saved',
+    'messages.ipd_saved': 'IPD record updated',
+    'messages.pharmacy_saved': 'Medication ordered',
+    'messages.lab_saved': 'Lab order sent',
+    'messages.lab_result_saved': 'Lab result saved',
+    'messages.xray_saved': 'X-ray order sent',
+    'messages.xray_result_saved': 'X-ray result saved',
+    'messages.billing_saved': 'Invoice created',
     'patients.title': 'Patient Registry',
     'patients.subtitle': 'Central patient registry for all departments',
     'patients.add_new': 'Add New Patient',
@@ -286,7 +379,12 @@ function bindLanguageSwitcher() {
     const newLocale = sel.value;
     localStorage.setItem(LOCALE_KEY, newLocale);
     applyTranslations(newLocale);
+    renderApp();
   });
+}
+
+function t(key, locale = currentLocale()) {
+  return (TRANSLATIONS[locale] || TRANSLATIONS.en || {})[key] || key;
 }
 
 function applyTranslations(locale) {
@@ -298,6 +396,10 @@ function applyTranslations(locale) {
   document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
     const key = el.getAttribute('data-i18n-placeholder');
     if (dict[key]) el.setAttribute('placeholder', dict[key]);
+  });
+  document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
+    const key = el.getAttribute('data-i18n-aria-label');
+    if (dict[key]) el.setAttribute('aria-label', dict[key]);
   });
 }
 
@@ -454,7 +556,7 @@ function bindPatientForm() {
     saveState(state);
     form.reset();
     const messageBox = document.getElementById('formMessage');
-    if (messageBox) messageBox.textContent = 'บันทึกผู้ป่วยเรียบร้อยแล้ว';
+    if (messageBox) messageBox.textContent = t('messages.patient_saved');
   });
 }
 
@@ -470,7 +572,7 @@ function bindDepartmentForms() {
       patient.notes = note || 'OPD triage completed';
       patient.department = 'OPD';
       saveState(state);
-      showDepartmentMessage(opdForm, 'บันทึกข้อมูล OPD แล้ว');
+      showDepartmentMessage(opdForm, t('messages.opd_saved'));
     });
   }
 
@@ -487,7 +589,7 @@ function bindDepartmentForms() {
       patient.status = status || 'Stable';
       patient.department = 'IPD';
       saveState(state);
-      showDepartmentMessage(ipdForm, 'อัปเดตข้อมูล IPD แล้ว');
+      showDepartmentMessage(ipdForm, t('messages.ipd_saved'));
     });
   }
 
@@ -512,7 +614,7 @@ function bindDepartmentForms() {
       state.medications.unshift({ id: Date.now(), patientId: patient.id, name, dose, unit: 'mg', frequency, status: 'Ordered' });
       state.alerts = alerts.map((message, index) => ({ id: Date.now() + index, patientId: patient.id, message, severity: message === 'ผู้ป่วยแพ้ยา' ? 'High' : 'Medium' }));
       saveState(state);
-      showDepartmentMessage(pharmacyForm, alerts.length ? `พบ Clinical Alert: ${alerts.join(', ')}` : 'สั่งยาเรียบร้อยแล้ว');
+      showDepartmentMessage(pharmacyForm, alerts.length ? `${t('dashboard.ai.alert')} ${alerts.join(', ')}` : t('messages.pharmacy_saved'));
     });
   }
 
@@ -526,7 +628,7 @@ function bindDepartmentForms() {
       if (!patient || !test) return;
       state.labOrders.unshift({ id: Date.now(), patientId: patient.id, test, status: 'Pending', result: '-' });
       saveState(state);
-      showDepartmentMessage(labForm, 'ส่งคำสั่ง Lab แล้ว');
+      showDepartmentMessage(labForm, t('messages.lab_saved'));
     });
   }
 
@@ -547,7 +649,7 @@ function bindDepartmentForms() {
         state.labOrders.unshift({ id: Date.now(), patientId: patient.id, test: 'Lab Result', status, result });
       }
       saveState(state);
-      showDepartmentMessage(labResultForm, 'บันทึกผล Lab แล้ว');
+      showDepartmentMessage(labResultForm, t('messages.lab_result_saved'));
     });
   }
 
@@ -561,7 +663,7 @@ function bindDepartmentForms() {
       if (!patient || !test) return;
       state.xrayOrders.unshift({ id: Date.now(), patientId: patient.id, test, status: 'Pending', result: '-' });
       saveState(state);
-      showDepartmentMessage(xrayForm, 'ส่งคำสั่ง X-ray แล้ว');
+      showDepartmentMessage(xrayForm, t('messages.xray_saved'));
     });
   }
 
@@ -582,7 +684,7 @@ function bindDepartmentForms() {
         state.xrayOrders.unshift({ id: Date.now(), patientId: patient.id, test: 'X-ray Result', status, result });
       }
       saveState(state);
-      showDepartmentMessage(xrayResultForm, 'บันทึกผล X-ray แล้ว');
+      showDepartmentMessage(xrayResultForm, t('messages.xray_result_saved'));
     });
   }
 
@@ -597,7 +699,7 @@ function bindDepartmentForms() {
       if (!patient || !amount) return;
       state.billing.unshift({ id: Date.now(), patientId: patient.id, amount, type, status: 'Pending' });
       saveState(state);
-      showDepartmentMessage(billingForm, 'สร้างบิลเรียบร้อยแล้ว');
+      showDepartmentMessage(billingForm, t('messages.billing_saved'));
     });
   }
 }
@@ -697,7 +799,7 @@ function renderPatientsPage(state, patients) {
           <td>${patient.admissionDate}</td>
           <td>${patient.status}</td>
         </tr>`).join('')
-    : '<tr><td colspan="7">ยังไม่มีข้อมูลผู้ป่วย</td></tr>';
+    : `<tr><td colspan="7">${t('common.no_patient_data')}</td></tr>`;
 }
 
 function renderDepartmentPage(state, departmentName, title, patients) {
@@ -705,8 +807,6 @@ function renderDepartmentPage(state, departmentName, title, patients) {
   renderAiPanel(getActivePatient(state));
   const heading = document.querySelector('.topbar h1');
   if (heading) heading.textContent = title;
-  const summary = document.querySelector('.topbar p');
-  if (summary) summary.textContent = `${departmentName} workflow shared across all departments`;
 }
 
 function renderDiagnosticResults(state, type) {
@@ -720,11 +820,11 @@ function renderDiagnosticResults(state, type) {
           <div class="status-item">
             <strong>${patient ? patient.name : 'Unknown'}</strong>
             <div>${item.test}</div>
-            <div>Status: ${item.status}</div>
-            <div>Result: ${item.result || '-'}</div>
+            <div>${t('status.' + (item.status || 'pending').toLowerCase())}</div>
+            <div>${t('dashboard.ai.summary')} ${item.result || '-'}</div>
           </div>`;
       }).join('')
-    : '<p class="muted">ยังไม่มีผลตรวจ</p>';
+    : `<p class="muted">${t('common.no_results')}</p>`;
 }
 
 function renderPatientSelector(patients) {
@@ -746,17 +846,17 @@ function renderAiPanel(patient) {
   }
 
   const probable = inferProbableCondition(patient.diagnosis);
-  const allergyMessage = patient.allergies?.length ? `ประวัติแพ้ยา: ${patient.allergies.join(', ')}` : 'ไม่มีประวัติแพ้ยา';
-  const interaction = patient.renalImpairment ? 'ควรพิจารณาลดขนาดยาและตรวจระดับ creatinine' : 'ไม่มีสัญญาณ Drug Interaction ที่ชัดเจน';
-  const guidance = patient.status === 'Critical' ? 'ให้ติดตามสัญญาณชีพและพิจารณาส่งต่อแผนกที่เกี่ยวข้องทันที' : 'ติดตามอาการและยืนยันตามแนวทางเวชปฏิบัติ';
+  const allergyMessage = patient.allergies?.length ? `${t('dashboard.ai.alert')} ${patient.allergies.join(', ')}` : `${t('dashboard.ai.alert')} ${t('common.no_patient_data')}`;
+  const interaction = patient.renalImpairment ? 'Consider dose review and creatinine check' : 'No clear drug interaction signals';
+  const guidance = patient.status === 'Critical' ? 'Monitor vitals and escalate as needed' : 'Continue follow-up according to clinical practice';
 
   panel.innerHTML = `
-    <h2>AI Assistant</h2>
-    <p><strong>สรุปประวัติ:</strong> ${patient.name} เป็นผู้ป่วย ${patient.diagnosis} ในแผนก ${patient.department}</p>
-    <p><strong>โรคที่เป็นไปได้:</strong> ${probable}</p>
-    <p><strong>Clinical Alert:</strong> ${allergyMessage}</p>
-    <p><strong>Drug Interaction:</strong> ${interaction}</p>
-    <p><strong>แนวทางรักษา:</strong> ${guidance}</p>
+    <h2>${t('dashboard.ai_assistant')}</h2>
+    <p><strong>${t('dashboard.ai.summary')}</strong> ${patient.name} • ${patient.diagnosis} • ${patient.department}</p>
+    <p><strong>${t('dashboard.ai.probable')}</strong> ${probable}</p>
+    <p><strong>${t('dashboard.ai.alert')}</strong> ${allergyMessage}</p>
+    <p><strong>${t('dashboard.ai.interaction')}</strong> ${interaction}</p>
+    <p><strong>${t('dashboard.ai.guidance')}</strong> ${guidance}</p>
   `;
 }
 
