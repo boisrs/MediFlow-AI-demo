@@ -17,11 +17,18 @@ const TRANSLATIONS = {
     'common.select_patient': 'ເລືອກຜູ້ເປັນໄຂ້',
     'common.no_patient_data': 'ຍັງບໍ່ມີຂໍ້ມູນຜູ້ເປັນໄຂ້',
     'common.no_results': 'ຍັງບໍ່ມີຜົນການທົດສອບ',
+    'common.unknown': 'ບໍ່ຮູ້',
     'status.stable': 'ສະຖານະດີ',
     'status.critical': 'ສະຖານະຮຸນແຮງ',
     'status.discharged': 'ອອກເຮັດ',
     'status.pending': 'ຍັງລໍຖ້າ',
     'status.completed': 'ສຳເລັດ',
+    'patients.gender.male': 'ຊາຍ',
+    'patients.gender.female': 'ຍິງ',
+    'patients.gender.other': 'ອື່ນໆ',
+    'patients.status.stable': 'ສະຖານະດີ',
+    'patients.status.critical': 'ສະຖານະຮຸນແຮງ',
+    'patients.status.discharged': 'ອອກເຮັດ',
     'billing.type.consultation': 'ການປຶກສາ',
     'billing.type.admission': 'ຮັບຄົນເຈັບ',
     'billing.type.lab': 'Lab',
@@ -30,14 +37,30 @@ const TRANSLATIONS = {
     'dashboard.cards.available_beds': 'ຕຽງວ່າງ',
     'dashboard.cards.low_stock': 'ຢາໃກ້ໝົດ',
     'dashboard.cards.avg_wait': 'ໄລຍະເວລາລໍຖ້າ້ສະເລ່ຍ',
+    'dashboard.departments.opd': 'OPD',
+    'dashboard.departments.ipd': 'IPD',
+    'dashboard.departments.pharmacy': 'ຮ້ານຢາ',
+    'dashboard.departments.lab': 'ໂຮງທົດສອບ',
+    'dashboard.departments.xray': 'X-ray',
+    'dashboard.departments.billing': 'ການຈ່າຍເງິນ',
     'dashboard.ai_assistant': 'ຜູ້ຊ່ວຍອັດສະລິຍະ',
     'dashboard.ai.summary': 'ສະຫຼຸບປະຫວັດ:',
     'dashboard.ai.probable': 'ພະຍາດທີ່ເປັນໄປໄດ້:',
     'dashboard.ai.alert': 'ການແຈ້ງເຕືອນ:',
     'dashboard.ai.interaction': 'ການໂຕ້ຕອບຢາ:',
     'dashboard.ai.guidance': 'ຄຳແນະນຳ:',
+    'dashboard.ai.interaction.none': 'ບໍ່ມີສັນຍານການໂຕ້ຕອບຢາທີ່ຈະແນ່ໃຈ',
+    'dashboard.ai.interaction.renal': 'ຄວາມຈໍາເປັນຕ້ອງປະຈຸບັນຂະໜາດຢາແລະກວດ creatinine',
+    'dashboard.ai.guidance.critical': 'ຕິດຕາມອາການຊີວິດຂອງຄົນເຈັບແລະພິຈາລະນາສົ່ງໄປບໍລິຫານທີ່ກ່ຽວຂ້ອງ',
+    'dashboard.ai.guidance.normal': 'ຕິດຕາມອາການແລະຢືນຢັນໂດຍອີງໃສ່ຄູ່ມືທາງການປິ່ນປົວ',
     'messages.patient_saved': 'ບັນທຶກຜູ້ເປັນໄຂ້ສຳເລັດແລ້ວ',
     'messages.opd_saved': 'ບັນທຶກ OPD ແລ້ວ',
+    'messages.login_required': 'ກະລຸນາປ້ອນຊື່ຜູ້ໃຊ້ແລະລະຫັດຜ່ານກ່ອນເຂົ້າສູ່ລະບົບ',
+    'dashboard.ai.no_patient_selected': 'ຍັງບໍ່ມີຜູ້ເປັນໄຂ້ທີ່ເລືອກ',
+    'diagnoses.pneumonia': 'ພະຍາດຝັງປະສົມທີ່ມີການຕິດເຊື້ອທາງຫາງເດີມ',
+    'diagnoses.diabetes': 'ເບ້າຮາດຫຼືພະຍາດທີ່ກ່ຽວຂ້ອງກັບນ້ໍາຕານໃນເລືອດ',
+    'diagnoses.hypertension': 'ຄວາມດັນເລືອດສູງ',
+    'diagnoses.general': 'ຕ້ອງປະເມີນເພີ່ມເຕີມອີງໃສ່ອາການແລະຜົນການທົດສອບ',
     'messages.ipd_saved': 'ອັບເດດ IPD ແລ້ວ',
     'messages.pharmacy_saved': 'ສັ່ງຢາສຳເລັດແລ້ວ',
     'messages.lab_saved': 'ສົ່ງຄໍາສັ່ງ Lab ແລ້ວ',
@@ -133,11 +156,18 @@ const TRANSLATIONS = {
     'common.select_patient': 'เลือกผู้ป่วย',
     'common.no_patient_data': 'ยังไม่มีข้อมูลผู้ป่วย',
     'common.no_results': 'ยังไม่มีผลตรวจ',
+    'common.unknown': 'ไม่ทราบ',
     'status.stable': 'เสถียร',
     'status.critical': 'วิกฤต',
     'status.discharged': 'จำหน่าย',
     'status.pending': 'รอดำเนินการ',
     'status.completed': 'เสร็จสิ้น',
+    'patients.gender.male': 'ชาย',
+    'patients.gender.female': 'หญิง',
+    'patients.gender.other': 'อื่น ๆ',
+    'patients.status.stable': 'เสถียร',
+    'patients.status.critical': 'วิกฤต',
+    'patients.status.discharged': 'จำหน่าย',
     'billing.type.consultation': 'ปรึกษา',
     'billing.type.admission': ' admit ',
     'billing.type.lab': 'Lab',
@@ -146,14 +176,30 @@ const TRANSLATIONS = {
     'dashboard.cards.available_beds': 'เตียงว่าง',
     'dashboard.cards.low_stock': 'ยาใกล้หมด',
     'dashboard.cards.avg_wait': 'เวลารอเฉลี่ย',
+    'dashboard.departments.opd': 'OPD',
+    'dashboard.departments.ipd': 'IPD',
+    'dashboard.departments.pharmacy': 'ร้านยา',
+    'dashboard.departments.lab': 'แล็บ',
+    'dashboard.departments.xray': 'เอ็กซเรย์',
+    'dashboard.departments.billing': 'การเงิน',
     'dashboard.ai_assistant': 'ผู้ช่วยแอป',
     'dashboard.ai.summary': 'สรุปประวัติ:',
     'dashboard.ai.probable': 'โรคที่เป็นไปได้:',
     'dashboard.ai.alert': 'Clinical Alert:',
     'dashboard.ai.interaction': 'Drug Interaction:',
     'dashboard.ai.guidance': 'แนวทางรักษา:',
+    'dashboard.ai.interaction.none': 'ไม่มีสัญญาณ Drug Interaction ที่ชัดเจน',
+    'dashboard.ai.interaction.renal': 'ควรพิจารณาลดขนาดยาและตรวจระดับ creatinine',
+    'dashboard.ai.guidance.critical': 'ให้ติดตามสัญญาณชีพและพิจารณาส่งต่อแผนกที่เกี่ยวข้องทันที',
+    'dashboard.ai.guidance.normal': 'ติดตามอาการและยืนยันตามแนวทางเวชปฏิบัติ',
     'messages.patient_saved': 'บันทึกผู้ป่วยเรียบร้อยแล้ว',
     'messages.opd_saved': 'บันทึกข้อมูล OPD แล้ว',
+    'messages.login_required': 'กรุณากรอกชื่อผู้ใช้และรหัสผ่านก่อนเข้าสู่ระบบ',
+    'dashboard.ai.no_patient_selected': 'ยังไม่มีผู้ป่วยที่เลือก',
+    'diagnoses.pneumonia': 'ปอดอักเสบหรือการติดเชื้อทางเดินหายใจ',
+    'diagnoses.diabetes': 'เบาหวานหรือภาวะแทรกซ้อนจากน้ำตาลในเลือด',
+    'diagnoses.hypertension': 'ความดันโลหิตสูง',
+    'diagnoses.general': 'ต้องประเมินเพิ่มเติมตามอาการและผลตรวจ',
     'messages.ipd_saved': 'อัปเดตข้อมูล IPD แล้ว',
     'messages.pharmacy_saved': 'สั่งยาเรียบร้อยแล้ว',
     'messages.lab_saved': 'ส่งคำสั่ง Lab แล้ว',
@@ -249,11 +295,18 @@ const TRANSLATIONS = {
     'common.select_patient': 'Select patient',
     'common.no_patient_data': 'No patient data yet',
     'common.no_results': 'No results yet',
+    'common.unknown': 'Unknown',
     'status.stable': 'Stable',
     'status.critical': 'Critical',
     'status.discharged': 'Discharged',
     'status.pending': 'Pending',
     'status.completed': 'Completed',
+    'patients.gender.male': 'Male',
+    'patients.gender.female': 'Female',
+    'patients.gender.other': 'Other',
+    'patients.status.stable': 'Stable',
+    'patients.status.critical': 'Critical',
+    'patients.status.discharged': 'Discharged',
     'billing.type.consultation': 'Consultation',
     'billing.type.admission': 'Admission',
     'billing.type.lab': 'Lab',
@@ -262,12 +315,22 @@ const TRANSLATIONS = {
     'dashboard.cards.available_beds': 'Available beds',
     'dashboard.cards.low_stock': 'Low stock',
     'dashboard.cards.avg_wait': 'Average wait',
+    'dashboard.departments.opd': 'OPD',
+    'dashboard.departments.ipd': 'IPD',
+    'dashboard.departments.pharmacy': 'Pharmacy',
+    'dashboard.departments.lab': 'Lab',
+    'dashboard.departments.xray': 'X-ray',
+    'dashboard.departments.billing': 'Billing',
     'dashboard.ai_assistant': 'AI Assistant',
     'dashboard.ai.summary': 'Summary history:',
     'dashboard.ai.probable': 'Probable condition:',
     'dashboard.ai.alert': 'Clinical Alert:',
     'dashboard.ai.interaction': 'Drug Interaction:',
     'dashboard.ai.guidance': 'Treatment guidance:',
+    'dashboard.ai.interaction.none': 'No clear drug interaction signals',
+    'dashboard.ai.interaction.renal': 'Consider dose review and creatinine check',
+    'dashboard.ai.guidance.critical': 'Monitor vitals and escalate as needed',
+    'dashboard.ai.guidance.normal': 'Continue follow-up according to clinical practice',
     'messages.patient_saved': 'Patient saved successfully',
     'messages.opd_saved': 'OPD record saved',
     'messages.ipd_saved': 'IPD record updated',
@@ -387,6 +450,34 @@ function t(key, locale = currentLocale()) {
   return (TRANSLATIONS[locale] || TRANSLATIONS.en || {})[key] || key;
 }
 
+function localizedValue(value, locale = currentLocale()) {
+  const normalized = String(value || '').trim();
+  if (!normalized) return t('common.unknown', locale);
+  const lower = normalized.toLowerCase();
+  if (['male', 'ชาย', 'ຊາຍ'].includes(lower)) return t('patients.gender.male', locale);
+  if (['female', 'หญิง', 'ຍິງ'].includes(lower)) return t('patients.gender.female', locale);
+  if (['other', 'อื่นๆ', 'อื่น ๆ', 'ອື່ນໆ'].includes(lower)) return t('patients.gender.other', locale);
+  if (['stable', 'เสถียร', 'ສະຖານະດີ'].includes(lower)) return t('patients.status.stable', locale);
+  if (['critical', 'วิกฤต', 'ສະຖານະຮຸນແຮງ'].includes(lower)) return t('patients.status.critical', locale);
+  if (['discharged', 'จำหน่าย', 'ອອກເຮັດ'].includes(lower)) return t('patients.status.discharged', locale);
+  if (['completed', 'เสร็จสิ้น', 'ສຳເລັດ'].includes(lower)) return t('status.completed', locale);
+  if (['pending', 'รอดำเนินการ', 'ຍັງລໍຖ້າ'].includes(lower)) return t('status.pending', locale);
+  return normalized;
+}
+
+function getDepartmentLabel(department, locale = currentLocale()) {
+  const map = {
+    OPD: 'dashboard.departments.opd',
+    IPD: 'dashboard.departments.ipd',
+    Pharmacy: 'dashboard.departments.pharmacy',
+    Lab: 'dashboard.departments.lab',
+    'X-ray': 'dashboard.departments.xray',
+    Billing: 'dashboard.departments.billing'
+  };
+  const key = map[department];
+  return key ? t(key, locale) : department;
+}
+
 function applyTranslations(locale) {
   const dict = TRANSLATIONS[locale] || {};
   document.querySelectorAll('[data-i18n]').forEach((el) => {
@@ -400,6 +491,30 @@ function applyTranslations(locale) {
   document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => {
     const key = el.getAttribute('data-i18n-aria-label');
     if (dict[key]) el.setAttribute('aria-label', dict[key]);
+  });
+  updateSelectOptionLabels(locale);
+}
+
+function updateSelectOptionLabels(locale) {
+  const optionMap = {
+    'ชาย': t('patients.gender.male', locale),
+    'หญิง': t('patients.gender.female', locale),
+    'อื่นๆ': t('patients.gender.other', locale),
+    'อื่น ๆ': t('patients.gender.other', locale),
+    'Stable': t('patients.status.stable', locale),
+    'Critical': t('patients.status.critical', locale),
+    'Discharged': t('patients.status.discharged', locale),
+    'Completed': t('status.completed', locale),
+    'Pending': t('status.pending', locale),
+    'Consultation': t('billing.type.consultation', locale),
+    'Admission': t('billing.type.admission', locale),
+    'Lab': t('billing.type.lab', locale),
+    'Imaging': t('billing.type.imaging', locale)
+  };
+
+  document.querySelectorAll('select option').forEach((option) => {
+    const translated = optionMap[option.value] || optionMap[option.textContent.trim()];
+    if (translated) option.textContent = translated;
   });
 }
 
@@ -520,7 +635,7 @@ function bindLogin() {
     if (username && password) {
       window.location.href = 'dashboard.html';
     } else {
-      alert('กรุณากรอกข้อมูลก่อนเข้าสู่ระบบ');
+      alert(t('messages.login_required'));
     }
   });
 }
@@ -737,18 +852,18 @@ function renderApp() {
 
   if (page === 'dashboard') renderDashboard(state, patients);
   if (page === 'patients') renderPatientsPage(state, patients);
-  if (page === 'opd') renderDepartmentPage(state, 'OPD', 'OPD Triage', patients);
-  if (page === 'ipd') renderDepartmentPage(state, 'IPD', 'IPD Admission', patients);
-  if (page === 'pharmacy') renderDepartmentPage(state, 'Pharmacy', 'Pharmacy', patients);
+  if (page === 'opd') renderDepartmentPage(state, 'OPD', 'opd.title', patients);
+  if (page === 'ipd') renderDepartmentPage(state, 'IPD', 'ipd.title', patients);
+  if (page === 'pharmacy') renderDepartmentPage(state, 'Pharmacy', 'pharmacy.title', patients);
   if (page === 'lab') {
-    renderDepartmentPage(state, 'Lab', 'Lab', patients);
+    renderDepartmentPage(state, 'Lab', 'lab.title', patients);
     renderDiagnosticResults(state, 'lab');
   }
   if (page === 'xray') {
-    renderDepartmentPage(state, 'X-ray', 'X-ray', patients);
+    renderDepartmentPage(state, 'X-ray', 'xray.title', patients);
     renderDiagnosticResults(state, 'xray');
   }
-  if (page === 'billing') renderDepartmentPage(state, 'Billing', 'Billing', patients);
+  if (page === 'billing') renderDepartmentPage(state, 'Billing', 'billing.title', patients);
 }
 
 function renderDashboard(state, patients) {
@@ -771,13 +886,13 @@ function renderDashboard(state, patients) {
   const departmentStatus = document.getElementById('departmentStatus');
   if (departmentStatus) {
     departmentStatus.innerHTML = [
-      { name: 'OPD', count: patients.filter((p) => p.department === 'OPD').length },
-      { name: 'IPD', count: patients.filter((p) => p.department === 'IPD').length },
-      { name: 'Pharmacy', count: state.medications.length },
-      { name: 'Lab', count: state.labOrders.length },
-      { name: 'X-ray', count: state.xrayOrders.length },
-      { name: 'Billing', count: state.billing.length }
-    ].map((item) => `<div class="status-item"><strong>${item.name}</strong><div>${item.count} items</div></div>`).join('');
+      { key: 'dashboard.departments.opd', count: patients.filter((p) => p.department === 'OPD').length },
+      { key: 'dashboard.departments.ipd', count: patients.filter((p) => p.department === 'IPD').length },
+      { key: 'dashboard.departments.pharmacy', count: state.medications.length },
+      { key: 'dashboard.departments.lab', count: state.labOrders.length },
+      { key: 'dashboard.departments.xray', count: state.xrayOrders.length },
+      { key: 'dashboard.departments.billing', count: state.billing.length }
+    ].map((item) => `<div class="status-item"><strong>${t(item.key)}</strong><div>${item.count} items</div></div>`).join('');
   }
 
   renderPatientSelector(patients);
@@ -794,19 +909,19 @@ function renderPatientsPage(state, patients) {
           <td>${patient.hn}</td>
           <td>${patient.name}</td>
           <td>${patient.age}</td>
-          <td>${patient.gender}</td>
+          <td>${localizedValue(patient.gender)}</td>
           <td>${patient.diagnosis}</td>
           <td>${patient.admissionDate}</td>
-          <td>${patient.status}</td>
+          <td>${localizedValue(patient.status)}</td>
         </tr>`).join('')
     : `<tr><td colspan="7">${t('common.no_patient_data')}</td></tr>`;
 }
 
-function renderDepartmentPage(state, departmentName, title, patients) {
+function renderDepartmentPage(state, departmentName, titleKey, patients) {
   renderPatientSelector(patients);
   renderAiPanel(getActivePatient(state));
   const heading = document.querySelector('.topbar h1');
-  if (heading) heading.textContent = title;
+  if (heading) heading.textContent = t(titleKey);
 }
 
 function renderDiagnosticResults(state, type) {
@@ -841,18 +956,18 @@ function renderAiPanel(patient) {
   const panel = document.getElementById('aiPanel');
   if (!panel) return;
   if (!patient) {
-    panel.innerHTML = '<p class="muted">ยังไม่มีข้อมูลผู้ป่วยที่เลือก</p>';
+    panel.innerHTML = `<p class="muted">${t('dashboard.ai.no_patient_selected')}</p>`;
     return;
   }
 
   const probable = inferProbableCondition(patient.diagnosis);
   const allergyMessage = patient.allergies?.length ? `${t('dashboard.ai.alert')} ${patient.allergies.join(', ')}` : `${t('dashboard.ai.alert')} ${t('common.no_patient_data')}`;
-  const interaction = patient.renalImpairment ? 'Consider dose review and creatinine check' : 'No clear drug interaction signals';
-  const guidance = patient.status === 'Critical' ? 'Monitor vitals and escalate as needed' : 'Continue follow-up according to clinical practice';
+  const interaction = patient.renalImpairment ? t('dashboard.ai.interaction.renal') : t('dashboard.ai.interaction.none');
+  const guidance = patient.status === 'Critical' ? t('dashboard.ai.guidance.critical') : t('dashboard.ai.guidance.normal');
 
   panel.innerHTML = `
     <h2>${t('dashboard.ai_assistant')}</h2>
-    <p><strong>${t('dashboard.ai.summary')}</strong> ${patient.name} • ${patient.diagnosis} • ${patient.department}</p>
+    <p><strong>${t('dashboard.ai.summary')}</strong> ${patient.name} • ${patient.diagnosis} • ${getDepartmentLabel(patient.department)}</p>
     <p><strong>${t('dashboard.ai.probable')}</strong> ${probable}</p>
     <p><strong>${t('dashboard.ai.alert')}</strong> ${allergyMessage}</p>
     <p><strong>${t('dashboard.ai.interaction')}</strong> ${interaction}</p>
@@ -866,12 +981,12 @@ function renderCommonDiseases(commonDiagnoses) {
   panel.innerHTML = commonDiagnoses.length ? commonDiagnoses.map(([name, count]) => `<div>${name}: ${count}</div>`).join('') : '<div>ไม่มีข้อมูล</div>';
 }
 
-function inferProbableCondition(diagnosis) {
+function inferProbableCondition(diagnosis, locale = currentLocale()) {
   const text = diagnosis.toLowerCase();
-  if (text.includes('pneumonia') || text.includes('cough')) return 'ปอดอักเสบหรือการติดเชื้อทางเดินหายใจ';
-  if (text.includes('diab')) return 'เบาหวานหรือภาวะแทรกซ้อนจากน้ำตาลในเลือด';
-  if (text.includes('hypertension') || text.includes('pressure')) return 'ความดันโลหิตสูง';
-  return 'ต้องประเมินเพิ่มเติมตามอาการและผลตรวจ';
+  if (text.includes('pneumonia') || text.includes('cough')) return t('diagnoses.pneumonia', locale);
+  if (text.includes('diab')) return t('diagnoses.diabetes', locale);
+  if (text.includes('hypertension') || text.includes('pressure')) return t('diagnoses.hypertension', locale);
+  return t('diagnoses.general', locale);
 }
 
 function getActivePatient(state) {

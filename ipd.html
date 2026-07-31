@@ -38,7 +38,7 @@
       </header>
 
       <section class="panel">
-        <h2>เลือกผู้ป่วย</h2>
+        <h2 data-i18n="common.select_patient">เลือกผู้ป่วย</h2>
         <div id="patientList" class="patient-list"></div>
       </section>
 
@@ -47,9 +47,9 @@
         <form id="ipdForm">
           <input id="bedNumber" placeholder="เลขเตียง" data-i18n-placeholder="ipd.form.bed">
           <select id="ipdStatus" data-i18n="ipd.form.status">
-            <option value="Stable">Stable</option>
-            <option value="Critical">Critical</option>
-            <option value="Discharged">Discharged</option>
+            <option value="Stable" data-i18n="patients.status.stable">Stable</option>
+            <option value="Critical" data-i18n="patients.status.critical">Critical</option>
+            <option value="Discharged" data-i18n="patients.status.discharged">Discharged</option>
           </select>
           <button type="submit" data-i18n="ipd.update">อัปเดตข้อมูล</button>
           <p class="message"></p>

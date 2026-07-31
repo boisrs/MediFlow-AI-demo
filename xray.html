@@ -38,7 +38,7 @@
       </header>
 
       <section class="panel">
-        <h2>เลือกผู้ป่วย</h2>
+        <h2 data-i18n="common.select_patient">เลือกผู้ป่วย</h2>
         <div id="patientList" class="patient-list"></div>
       </section>
 
@@ -56,8 +56,8 @@
         <form id="xrayResultForm">
           <input id="xrayResultValue" placeholder="ผลภาพ" data-i18n-placeholder="xray.result.value">
           <select id="xrayResultStatus">
-            <option value="Completed">Completed</option>
-            <option value="Pending">Pending</option>
+            <option value="Completed" data-i18n="status.completed">Completed</option>
+            <option value="Pending" data-i18n="status.pending">Pending</option>
           </select>
           <button type="submit" data-i18n="xray.result.save">บันทึกผล</button>
           <p class="message"></p>

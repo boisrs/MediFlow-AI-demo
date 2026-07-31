@@ -38,7 +38,7 @@
       </header>
 
       <section class="panel">
-        <h2>เลือกผู้ป่วย</h2>
+        <h2 data-i18n="common.select_patient">เลือกผู้ป่วย</h2>
         <div id="patientList" class="patient-list"></div>
       </section>
 
@@ -47,10 +47,10 @@
         <form id="billingForm">
           <input id="billingAmount" type="number" placeholder="จำนวนเงิน" data-i18n-placeholder="billing.form.amount">
           <select id="billingType" data-i18n="billing.form.type">
-            <option value="Consultation">Consultation</option>
-            <option value="Admission">Admission</option>
-            <option value="Lab">Lab</option>
-            <option value="Imaging">Imaging</option>
+            <option value="Consultation" data-i18n="billing.type.consultation">Consultation</option>
+            <option value="Admission" data-i18n="billing.type.admission">Admission</option>
+            <option value="Lab" data-i18n="billing.type.lab">Lab</option>
+            <option value="Imaging" data-i18n="billing.type.imaging">Imaging</option>
           </select>
           <button type="submit" data-i18n="billing.submit">สร้างบิล</button>
           <p class="message"></p>

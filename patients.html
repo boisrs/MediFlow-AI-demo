@@ -45,16 +45,16 @@
             <input name="name" placeholder="ชื่อผู้ป่วย" required data-i18n-placeholder="patients.form.name">
             <input name="age" type="number" placeholder="อายุ" required data-i18n-placeholder="patients.form.age">
             <select name="gender" data-i18n="patients.form.gender">
-              <option value="ชาย">ชาย</option>
-              <option value="หญิง">หญิง</option>
-              <option value="อื่นๆ">อื่นๆ</option>
+              <option value="ชาย" data-i18n="patients.gender.male">ชาย</option>
+              <option value="หญิง" data-i18n="patients.gender.female">หญิง</option>
+              <option value="อื่นๆ" data-i18n="patients.gender.other">อื่นๆ</option>
             </select>
             <input name="diagnosis" placeholder="โรค/วินิจฉัย" required data-i18n-placeholder="patients.form.diagnosis">
             <input name="admissionDate" type="date" required>
             <select name="status" data-i18n="patients.form.status">
-              <option value="Stable">Stable</option>
-              <option value="Critical">Critical</option>
-              <option value="Discharged">Discharged</option>
+              <option value="Stable" data-i18n="patients.status.stable">Stable</option>
+              <option value="Critical" data-i18n="patients.status.critical">Critical</option>
+              <option value="Discharged" data-i18n="patients.status.discharged">Discharged</option>
             </select>
           </div>
           <button type="submit" data-i18n="patients.save">บันทึกข้อมูล</button>
