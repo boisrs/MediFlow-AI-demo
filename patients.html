@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patient Registry</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="patients">
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>MediFlow</h2>
+      <a href="dashboard.html" data-i18n="nav.dashboard">Dashboard</a>
+      <a href="patients.html" data-i18n="nav.patients">Patient Registry</a>
+      <a href="opd.html" data-i18n="nav.opd">OPD</a>
+      <a href="ipd.html" data-i18n="nav.ipd">IPD</a>
+      <a href="pharmacy.html" data-i18n="nav.pharmacy">Pharmacy</a>
+      <a href="lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="xray.html" data-i18n="nav.xray">X-ray</a>
+      <a href="billing.html" data-i18n="nav.billing">Billing</a>
+      <a href="index.html" data-i18n="nav.logout">Logout</a>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 data-i18n="patients.title">Patient Registry</h1>
+          <p data-i18n="patients.subtitle">ทะเบียนผู้ป่วยกลางสำหรับทุกแผนก</p>
+        </div>
+        <div class="topbar-right">
+          <label class="sr-only" for="langSelect">Language</label>
+          <select id="langSelect" aria-label="Language switcher">
+            <option value="lo">ລາວ</option>
+            <option value="th">ภาษาไทย</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </header>
+
+      <section class="panel">
+        <h2 data-i18n="patients.add_new">เพิ่มผู้ป่วยใหม่</h2>
+        <form id="patientForm">
+          <div class="form-grid">
+            <input name="hn" placeholder="HN" data-i18n-placeholder="patients.form.hn">
+            <input name="name" placeholder="ชื่อผู้ป่วย" required data-i18n-placeholder="patients.form.name">
+            <input name="age" type="number" placeholder="อายุ" required data-i18n-placeholder="patients.form.age">
+            <select name="gender" data-i18n="patients.form.gender">
+              <option value="ชาย">ชาย</option>
+              <option value="หญิง">หญิง</option>
+              <option value="อื่นๆ">อื่นๆ</option>
+            </select>
+            <input name="diagnosis" placeholder="โรค/วินิจฉัย" required data-i18n-placeholder="patients.form.diagnosis">
+            <input name="admissionDate" type="date" required>
+            <select name="status" data-i18n="patients.form.status">
+              <option value="Stable">Stable</option>
+              <option value="Critical">Critical</option>
+              <option value="Discharged">Discharged</option>
+            </select>
+          </div>
+          <button type="submit" data-i18n="patients.save">บันทึกข้อมูล</button>
+          <p id="formMessage" class="message"></p>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2 data-i18n="patients.list">รายการผู้ป่วย</h2>
+        <table>
+          <thead>
+            <tr>
+              <th data-i18n="table.hn">HN</th>
+              <th data-i18n="table.name">ชื่อ</th>
+              <th data-i18n="table.age">อายุ</th>
+              <th data-i18n="table.gender">เพศ</th>
+              <th data-i18n="table.diagnosis">วินิจฉัย</th>
+              <th data-i18n="table.admit_date">วันที่ Admit</th>
+              <th data-i18n="table.status">Status</th>
+            </tr>
+          </thead>
+          <tbody id="patientTableBody"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

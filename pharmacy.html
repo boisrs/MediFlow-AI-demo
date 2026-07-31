@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pharmacy</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="pharmacy">
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>MediFlow</h2>
+      <a href="dashboard.html" data-i18n="nav.dashboard">Dashboard</a>
+      <a href="patients.html" data-i18n="nav.patients">Patient Registry</a>
+      <a href="opd.html" data-i18n="nav.opd">OPD</a>
+      <a href="ipd.html" data-i18n="nav.ipd">IPD</a>
+      <a href="pharmacy.html" data-i18n="nav.pharmacy">Pharmacy</a>
+      <a href="lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="xray.html" data-i18n="nav.xray">X-ray</a>
+      <a href="billing.html" data-i18n="nav.billing">Billing</a>
+      <a href="index.html" data-i18n="nav.logout">Logout</a>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 data-i18n="pharmacy.title">Pharmacy</h1>
+          <p data-i18n="pharmacy.subtitle">ระบบสั่งยาและ Clinical Alert</p>
+        </div>
+        <div class="topbar-right">
+          <label class="sr-only" for="langSelect">Language</label>
+          <select id="langSelect" aria-label="Language switcher">
+            <option value="lo">ລາວ</option>
+            <option value="th">ภาษาไทย</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </header>
+
+      <section class="panel">
+        <h2>เลือกผู้ป่วย</h2>
+        <div id="patientList" class="patient-list"></div>
+      </section>
+
+      <section class="panel">
+        <h2 data-i18n="pharmacy.order">สั่งยา</h2>
+        <form id="pharmacyForm">
+          <input id="drugName" placeholder="ชื่อยา" data-i18n-placeholder="pharmacy.form.name">
+          <input id="drugDose" type="number" placeholder="ขนาดยา" data-i18n-placeholder="pharmacy.form.dose">
+          <input id="drugFreq" placeholder="ความถี่" data-i18n-placeholder="pharmacy.form.freq">
+          <button type="submit" data-i18n="pharmacy.submit">สั่งยา</button>
+          <p class="message"></p>
+        </form>
+      </section>
+
+      <section class="panel" id="aiPanel"></section>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

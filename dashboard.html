@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>MediFlow</h2>
+      <a href="dashboard.html" data-i18n="nav.dashboard">Dashboard</a>
+      <a href="patients.html" data-i18n="nav.patients">Patient Registry</a>
+      <a href="opd.html" data-i18n="nav.opd">OPD</a>
+      <a href="ipd.html" data-i18n="nav.ipd">IPD</a>
+      <a href="pharmacy.html" data-i18n="nav.pharmacy">Pharmacy</a>
+      <a href="lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="xray.html" data-i18n="nav.xray">X-ray</a>
+      <a href="billing.html" data-i18n="nav.billing">Billing</a>
+      <a href="index.html" data-i18n="nav.logout">Logout</a>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 data-i18n="dashboard.title">Executive Dashboard</h1>
+          <p data-i18n="dashboard.subtitle">ภาพรวมผู้ป่วยและแผนกต่าง ๆ แบบ real-time</p>
+        </div>
+        <div class="topbar-right">
+          <label class="sr-only" for="langSelect">Language</label>
+          <select id="langSelect" aria-label="Language switcher">
+            <option value="lo">ລາວ</option>
+            <option value="th">ภาษาไทย</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+        <span class="live-pill" data-i18n="dashboard.live">Live sync</span>
+      </header>
+
+      <section class="cards">
+        <div class="card">
+          <h3>จำนวนผู้ป่วยวันนี้</h3>
+          <p id="todayPatients" class="big-number">0</p>
+        </div>
+        <div class="card">
+          <h3>เตียงว่าง</h3>
+          <p id="availableBeds" class="big-number">0</p>
+        </div>
+        <div class="card">
+          <h3>ยาใกล้หมด</h3>
+          <p id="lowStock" class="big-number">0</p>
+        </div>
+        <div class="card">
+          <h3>เวลารอเฉลี่ย</h3>
+          <p id="avgWait" class="big-number">0</p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2 data-i18n="dashboard.department_status">สถานะแผนก</h2>
+        <div class="status-grid" id="departmentStatus"></div>
+      </section>
+
+      <section class="panel">
+        <h2 data-i18n="dashboard.patients">ผู้ป่วยในระบบ</h2>
+        <div id="patientList"></div>
+      </section>
+
+      <section class="panel" id="aiPanel"></section>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MediFlow AI</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login">
+  <div class="login-card">
+    <h1 data-i18n="login.title">MediFlow AI</h1>
+    <p data-i18n="login.subtitle">ระบบ EMR ที่เชื่อมทุกแผนกในเวลาเดียวกัน</p>
+    <label class="sr-only" for="langSelect">Language</label>
+    <select id="langSelect" aria-label="Language switcher">
+      <option value="lo">ລາວ</option>
+      <option value="th">ภาษาไทย</option>
+      <option value="en">English</option>
+    </select>
+    <input id="username" placeholder="Username" data-i18n-placeholder="login.form.username">
+    <input id="password" placeholder="Password" type="password" data-i18n-placeholder="login.form.password">
+    <button id="loginBtn" data-i18n="login.submit">เข้าสู่ระบบ</button>
+    <p class="hint" data-i18n="login.hint">ตัวอย่าง: ใส่ชื่อผู้ใช้และรหัสผ่านใดก็ได้</p>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
